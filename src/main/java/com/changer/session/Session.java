@@ -1,7 +1,3 @@
-/*
-Copyright 2022-present © Care.com, Inc. All rights reserved.
-This software is the confidential and proprietary information of Care.com, Inc.
-*/
 package com.changer.session;
 
 import jakarta.servlet.http.Cookie;
@@ -63,9 +59,9 @@ public class Session {
             return Optional.empty();
         }
         return Arrays.stream(cookies)
-                .filter(c -> c.getName().equals(SESSION_ID_NAME))
-                .map(Cookie::getValue)
-                .findFirst();
+                     .filter(c -> c.getName().equals(SESSION_ID_NAME))
+                     .map(Cookie::getValue)
+                     .findFirst();
 
     }
 

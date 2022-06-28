@@ -1,7 +1,3 @@
-/*
-Copyright 2022-present © Care.com, Inc. All rights reserved.
-This software is the confidential and proprietary information of Care.com, Inc.
-*/
 package com.changer.session;
 
 import java.time.Instant;
@@ -34,8 +30,8 @@ class SessionStorage {
 
     void removeExpired(long maxAge) {
         sessionMap.keySet()
-                .stream()
-                .filter(id -> Instant.now().toEpochMilli() - maxAge < id.getCreationDateInMillis())
-                .forEach(sessionMap::remove);
+                  .stream()
+                  .filter(id -> Instant.now().toEpochMilli() - maxAge < id.getCreationDateInMillis())
+                  .forEach(sessionMap::remove);
     }
 }
